@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-900: #0a0e17;
+  --color-dark-800: #111827;
+  --color-dark-700: #1a2235;
+  --color-dark-600: #243049;
+  --color-dark-500: #374357;
+  --color-green-profit: #00e676;
+  --color-red-loss: #ff5252;
+  --color-blue-accent: #448aff;
+  --color-purple-accent: #7c4dff;
+  --color-yellow-accent: #ffd740;
+  --color-cyan-accent: #18ffff;
+}
+
+body {
+  background-color: var(--color-dark-900);
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-500);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue-accent);
+}
+
+/* Input styling */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(68, 138, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(68, 138, 255, 0.6); }
+}
+
+.glow-pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
